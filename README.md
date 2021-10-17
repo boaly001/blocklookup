@@ -12,8 +12,10 @@ In Visual Studio, go to menu Tools > NuGet Package Manager > Package Manager Con
 
 Run commands:
 
-  Add-Migration InitialCreate
-  Update-Database
+```bash
+Add-Migration InitialCreate
+Update-Database
+```
 
 2. Click on the IIS Server button to run the app.
 
