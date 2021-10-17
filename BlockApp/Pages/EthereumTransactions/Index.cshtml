@@ -1,0 +1,72 @@
+﻿@page
+@model BlockApp.Pages.EthereumTransactions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Search Ethereum Transactions</h1>
+
+<form>
+    <p>
+        Block Address: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].BlockHash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].BlockNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].Gas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].Hash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionList[0].Value)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TransactionList)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlockHash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlockNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
